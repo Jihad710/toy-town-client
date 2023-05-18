@@ -19,7 +19,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive ? "text-error  font-semibold" : "text-dark"
           }
-          to="/allToys"
+          to="/alltoy"
         >
           All Toys
         </NavLink>
@@ -41,7 +41,7 @@ const Navbar = () => {
             className={({ isActive }) =>
               isActive ? "text-error  font-semibold" : "text-dark"
             }
-            to="/addAToy"
+            to="/addtoy"
           >
             Add A Toy
           </NavLink>
@@ -53,7 +53,7 @@ const Navbar = () => {
           className={({ isActive }) =>
             isActive ? "text-error  font-semibold" : "text-dark"
           }
-          to="/blogs"
+          to="/blog"
         >
           Blogs
         </NavLink>
