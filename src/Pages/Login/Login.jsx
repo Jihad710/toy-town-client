@@ -1,5 +1,8 @@
 import React, { useContext, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { FaGoogle } from "react-icons/fa";
+import { useForm } from 'react-hook-form';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const Login = () => {
     const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();

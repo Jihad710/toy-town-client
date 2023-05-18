@@ -102,22 +102,20 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{routeName}</ul>
         </div>
         <div className="navbar-end">
-          {/* {user && (
-          <div className="tooltip tooltip-left" data-tip={user.displayName}>
-            {user.photoURL && (
-              <img style={{ height: 50, width: 50 }} src={user.photoURL} className="rounded-full mx-2" />
-            )}
-          </div>
-        )} */}
-          {/* {user ? (
-            <button onClick={handleSignOut} className="btn bg-purple-400">
-              Log out
-            </button>
-          ) : (
-            <Link to="/login">
-              <button className="btn bg-purple-400">Login</button>
-            </Link>
-          )} */}
+        {
+                        <div className="tooltip tooltip-left" data-tip={user?.displayName}>
+
+                            {
+                                user?.photoURL ? <img style={{ height: 50, width: 50 }} src={user.photoURL} className="rounded-full mx-2 " /> : ""
+                            }
+
+                        </div>
+                    }
+                    {
+                        user ? <Link ><button onClick={handleSignOut} className="btn  bg-purple-400 ">Log out</button>
+                        </Link> : <Link to="/login"><button className="btn  bg-purple-400 ">Login</button>
+                        </Link>
+                    }
         </div>
       </div>
     </div>

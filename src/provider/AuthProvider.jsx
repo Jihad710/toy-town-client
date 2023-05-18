@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, {createContext, useEffect, useState } from 'react';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import app from '../firebase/firebase.config';
 import { toast } from 'react-hot-toast';
@@ -48,7 +48,17 @@ const AuthProvider = ({children}) => {
     }, [])
 
 
+    const AuthInfo = {
+        auth,
+        user,
+        loading,
+        login,
+        CreateUser,
+        SignOutUser,
+        loginWithGoogle,
 
+
+    }
 
 
 
@@ -56,7 +66,10 @@ const AuthProvider = ({children}) => {
 
     return (
         <div>
-            
+            <AuthContext.Provider value={AuthInfo}>
+                {children}
+
+            </AuthContext.Provider>
         </div>
     );
 };
