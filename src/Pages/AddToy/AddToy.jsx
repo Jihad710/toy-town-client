@@ -28,10 +28,11 @@ const AddToy = () => {
     };
 
     const options = [
-        { value: "starWars", label: "starWars" },
-        { value: "architecture", label: "architecture" },
-        { value: "cars", label: "cars" },
-        { value: "machine", label: "machine" },
+        { value: "Sports car", label: "sports car" },
+        { value: "Truck", label: "Truck" },
+        { value: "Mini fire truck", label: "Mini fire truck" },
+        { value: "Mini police car", label: "Mini police car" },
+        { value: "Regular car", label: "Regular car" },
     ];
 
     const rating = [
@@ -60,6 +61,19 @@ const AddToy = () => {
                     />
                     {errors.name && <p className="text-red-500">Toy name is required</p>}
                 </div>
+               
+                <div className="">
+                    <label htmlFor="imgLink" className="block text-sm font-medium text-gray-700">
+                        Toy category
+                    </label>
+                    <Select
+                        className="w-75"
+                        defaultValue={selectedOption}
+                        onChange={setSelectedOption}
+                        options={options}
+                    />
+                </div>
+                
                 <div className="">
                     <label htmlFor="imgLink" className="block text-sm font-medium text-gray-700">
                         Image Link
@@ -73,17 +87,6 @@ const AddToy = () => {
                     />
                     {errors.imgLink && <p className="text-red-500">Image link is required</p>}
                     
-                </div>
-                <div className="">
-                    <label htmlFor="imgLink" className="block text-sm font-medium text-gray-700">
-                        Toy category
-                    </label>
-                    <Select
-                        className="w-75"
-                        defaultValue={selectedOption}
-                        onChange={setSelectedOption}
-                        options={options}
-                    />
                 </div>
                 <div className="">
                     <label htmlFor="price" className="block text-sm font-medium text-gray-700">

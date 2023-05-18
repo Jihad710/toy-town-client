@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
+  const { user, SignOutUser, loginWithGoogle, CreateUser, login } = useContext(AuthContext)
+
+  const handleSignOut = () => {
+    SignOutUser()
+
+}
+
+
+
   const routeName = (
     <>
       <li>

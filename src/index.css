@@ -1,3 +1,11 @@
+/* body{
+    margin: 0;
+    background-color: #FEF5E7 ;
+} */
+
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
