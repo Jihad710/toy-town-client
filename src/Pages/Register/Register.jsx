@@ -52,13 +52,15 @@ const Register = () => {
 
   return (
     <div className="md:w-1/2 mx-auto">
-      <div className="card  w-full shadow-2xl bg-base-100">
+      <div className="card  w-full  bg-base-100">
+        
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="card-body">
+          <h2 className="text-3xl font-bold mt-5 mb-2 text-warning">Create Account</h2>
             <div className=" grid grid-cols-1 gap-2 ">
               <div className="form-control">
                 <label className="label" htmlFor="name">
-                  <span className="label-text">Name</span>
+                  <span className="label-text ">Name</span>
                 </label>
                 <input
                   type="text"
@@ -68,12 +70,12 @@ const Register = () => {
                     required: "Name is required",
                   })}
                 />
-                {errors.name && <span>{errors.name.message}</span>}
+                {errors.name && <span className="text-error">{errors.name.message}</span>}
               </div>
 
               <div className="form-control">
                 <label className="label" htmlFor="email">
-                  <span className="label-text">Email</span>
+                  <span className="label-text ">Email</span>
                 </label>
                 <input
                   type="email"
@@ -81,13 +83,10 @@ const Register = () => {
                   id="email"
                   {...register("email", {
                     required: "Email is required",
-                    pattern: {
-                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                      message: "Invalid email address",
-                    },
+                   
                   })}
                 />
-                {errors.email && <span>{errors.email.message}</span>}
+                {errors.email && <span className="text-error">{errors.email.message}</span>}
               </div>
               <div className="from-control">
                 <label className="label" htmlFor="imageLink">
@@ -101,7 +100,7 @@ const Register = () => {
                     required: "Image link is required",
                   })}
                 />
-                {errors.imageLink && <p>{errors.imageLink.message}</p>}
+                {errors.imageLink && <span className="text-error">{errors.imageLink.message}</span>}
               </div>
               <div className="form-control">
                 <label className="label" htmlFor="password">
@@ -119,7 +118,7 @@ const Register = () => {
                     },
                   })}
                 />
-                {errors.password && <span>{errors.password.message}</span>}
+                {errors.password && <span className="text-error">{errors.password.message}</span>}
               </div>
 
               <div className="form-control">
@@ -144,7 +143,7 @@ const Register = () => {
               </div>
             </div>
             <div className="form-control mt-6">
-              <button className="btn  bg-purple-400" type="submit">
+              <button className="btn  btn-warning hover:bg-gray-600 text-white" type="submit">
                 Register
               </button>
             </div>
@@ -153,7 +152,7 @@ const Register = () => {
         <div className="text-center mb-5">
           <p className="my-2">
             Already have an account?{" "}
-            <Link to="/login" className="text-primary font-semibold">
+            <Link to="/login" className="text-orange-500 font-semibold hover:text-gray-400">
               Login
             </Link>
           </p>

@@ -44,18 +44,21 @@ const Login = () => {
 
   return (
     <div>
+    
       <div className="md:w-1/2 mx-auto">
-        <div className="card  w-full shadow-2xl bg-base-100">
+        <div className="card  w-full bg-base-100">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="card-body">
+            <h2 className="text-3xl font-bold mt-5 mb-2 text-warning">Login</h2>
+            <p></p>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text"> Enter Your Email</span>
                 </label>
                 <input
                   type="email"
                   className="input input-bordered"
-                  placeholder="enter your email"
+                  placeholder="Email Here"
                   id="email"
                   {...register("email", {
                     required: "Email is required",
@@ -69,12 +72,12 @@ const Login = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text">Enter Your Password</span>
                 </label>
                 <input
                   type={showPassword ? "text" : "password"}
                   className="input input-bordered"
-                  placeholder="Enter your password"
+                  placeholder="Password Here"
                   id="password"
                   {...register("password", {
                     required: "Password is required",
@@ -86,7 +89,7 @@ const Login = () => {
                 />
 
                 <div className="flex justify-between items-center">
-                  <label htmlFor="showPassword" className="ml-2">
+                  <label htmlFor="showPassword" className="ml-2 mt-3">
                     Show Password
                     <input
                       type="checkbox"
@@ -98,7 +101,7 @@ const Login = () => {
                   </label>
 
                   <label className="label">
-                    <a href="#" className="label-text-alt link link-hover">
+                    <a href="#" className="label-text-alt link link-hover mt-3">
                       Forgot password?
                     </a>
                   </label>
@@ -117,9 +120,9 @@ const Login = () => {
               onClick={handleGoogleLogin}
               className="btn btn-outline btn-warning  mx-auto w-1/2">
               <FaGoogle />
-              <span className="ms-2 lowercase">Continue with Google</span>
+              <span className="ms-2 ">Continue with Google</span>
             </button>
-            <p className="my-2">
+            <p className="my-4">
               Don't have an account?{" "}
               <Link to="/register" className="text-orange-500 font-semibold hover:text-orange-700">
                 Create an account

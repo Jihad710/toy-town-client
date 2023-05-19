@@ -74,7 +74,7 @@ const AddToy = () => {
                     />
                 </div>
                 
-                <div className="">
+                <div>
                     <label htmlFor="imgLink" className="block text-sm font-medium text-gray-700">
                         Image Link
                     </label>
@@ -163,7 +163,7 @@ const AddToy = () => {
             <div className="text-center">
                 <button
                     type="submit"
-                    className="btn  bg-purple-400 btn-wide "
+                    className="btn  bg-rose-300 btn-wide "
                 >
                     Submit
                 </button>
