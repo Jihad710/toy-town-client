@@ -21,6 +21,7 @@ const AuthProvider = ({children}) => {
 
     const login = (email, password) => {
         setLoading(true)
+        toast.success('Login')
         return signInWithEmailAndPassword(auth, email, password)
     }
 

@@ -101,14 +101,14 @@ const Navbar = () => {
               {routeName}
             </ul>
           </div>
-          <img
+          <Link to="/"><img
             src={logo}
             className="w-8 md:w-16"
             alt=""
-          />
-          <h2 className="font-bold md:text-xl">
+          /></Link>
+          <Link to="/"><h2 className="font-bold md:text-xl">
             <span className="text-green-500">TOY</span> <span className="text-white">TOWN</span>
-          </h2>
+          </h2></Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{routeName}</ul>
@@ -118,13 +118,13 @@ const Navbar = () => {
                         <div className="tooltip tooltip-left" data-tip={user?.displayName}>
 
                             {
-                                user?.photoURL ? <img style={{ height: 50, width: 50 }} src={user.photoURL} className="rounded-full mx-2 " /> : ""
+                                user?.photoURL ? <img style={{ height: 50, width: 50 }} src={user.photoURL} className="rounded-full mx-5 " /> : ""
                             }
 
                         </div>
                     }
                     {
-                        user ? <Link ><button onClick={handleSignOut} className="btn  bg-purple-400 ">Log out</button>
+                        user ? <Link ><button onClick={handleSignOut} className="btn bg-rose-400 ">Log out</button>
                         </Link> : <Link to="/login"><button className="btn  bg-rose-400 hover:bg-zinc-500 ">Login</button>
                         </Link>
                     }

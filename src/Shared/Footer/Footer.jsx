@@ -6,9 +6,8 @@ const Footer = () => {
       <div>
         <img className='w-14' src={logo} alt="" />
         <p>
-          ACME Industries Ltd.
-          <br />
-          Providing reliable tech since 1992
+          TOY TOWN ONLINE SHOPPING
+         
         </p>
       </div>
       <div>
