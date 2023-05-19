@@ -43,7 +43,7 @@ const Navbar = () => {
             className={({ isActive }) =>
               isActive ? "font-semibold " : "text-gray-400 hover:text-white"
             }
-            to="/mytoys"
+            to="/mytoy"
           >
             My Toys
           </NavLink>
