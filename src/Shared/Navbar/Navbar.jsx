@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import logo from '../../assets/logo.png';
 
 const Navbar = () => {
   const { user, SignOutUser, loginWithGoogle, CreateUser, login } = useContext(AuthContext)
@@ -14,10 +15,11 @@ const Navbar = () => {
 
   const routeName = (
     <>
+    
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-error font-semibold  " : "text-dark"
+            isActive ? "font-semibold" : "text-gray-400 hover:text-white"
           }
           to="/"
         >
@@ -27,7 +29,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-error  font-semibold" : "text-dark"
+            isActive ? " font-semibold" : "text-gray-400 hover:text-white"
           }
           to="/alltoy"
         >
@@ -39,9 +41,9 @@ const Navbar = () => {
         <li>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "text-error font-semibold " : "text-dark"
+              isActive ? "font-semibold " : "text-gray-400 hover:text-white"
             }
-            to="/myToys"
+            to="/mytoys"
           >
             My Toys
           </NavLink>
@@ -49,7 +51,7 @@ const Navbar = () => {
         <li>
           <NavLink
             className={({ isActive }) =>
-              isActive ? "text-error  font-semibold" : "text-dark"
+              isActive ? "  font-semibold" : "text-gray-400 hover:text-white"
             }
             to="/addtoy"
           >
@@ -61,7 +63,7 @@ const Navbar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            isActive ? "text-error  font-semibold" : "text-dark"
+            isActive ? " font-semibold" : "text-gray-400 hover:text-white"
           }
           to="/blog"
         >
@@ -72,8 +74,8 @@ const Navbar = () => {
   );
 
   return (
-    <div className="container mx-auto">
-      <div className="navbar bg-base-100">
+    <div className="container mx-auto  ">
+      <div className="navbar bg-gray-700 ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -100,12 +102,12 @@ const Navbar = () => {
             </ul>
           </div>
           <img
-            src=""
+            src={logo}
             className="w-8 md:w-16"
             alt=""
           />
           <h2 className="font-bold md:text-xl">
-            Toy Town
+            <span className="text-green-500">TOY</span> <span className="text-white">TOWN</span>
           </h2>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -123,7 +125,7 @@ const Navbar = () => {
                     }
                     {
                         user ? <Link ><button onClick={handleSignOut} className="btn  bg-purple-400 ">Log out</button>
-                        </Link> : <Link to="/login"><button className="btn  bg-purple-400 ">Login</button>
+                        </Link> : <Link to="/login"><button className="btn  bg-rose-400 hover:bg-zinc-500 ">Login</button>
                         </Link>
                     }
         </div>
