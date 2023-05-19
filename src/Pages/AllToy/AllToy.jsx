@@ -7,7 +7,15 @@ const AllToy = () => {
     const [loading , setLoading] = useState(true)
      useEffect(()=>{
         setLoading(true)
-        fetch(`http://localhost:5000/alltoy`)
+        fetch(`http://localhost:5000/alltoy`,{
+            method:"GET",
+            headers:{
+                "content-type":"application.json"
+            },
+            headers:{
+                body:"",
+            }
+        })
         .then(res=>res.json())
         .then(data=>setToys(data))
         setLoading(false)
