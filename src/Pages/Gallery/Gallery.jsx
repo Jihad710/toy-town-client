@@ -2,33 +2,79 @@ import React from 'react';
 
 const Gallery = () => {
     return (
-        
-        <div class="container mx-auto py-8 flex justify-start">
-      
-        <div class="grid grid-cols-3 gap-4">
-          <div class="relative group">
-            <img class="w-full h-full object-cover transition duration-300 ease-in-out transform group-hover:scale-105" src="https://images.unsplash.com/photo-1578652520385-c05f6f3b5de3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="" />
-            
-            <div class="overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-             
+        <div class="container mx-auto px-5 py-2 lg:px-32 lg:pt-12">
+            <h1 className='text-4xl text-bold text-center mb-5'>Unique Cars Photo Gallery</h1>
+        <div class="-m-1 flex flex-wrap md:-m-2">
+          <div class="flex w-1/3 flex-wrap">
+            <div class="w-full p-1 md:p-2">
+              <div class="image-container relative">
+                <img
+                  alt="gallery"
+                  class="block h-full w-full rounded-lg object-cover  image object-center hover:scale-110 transition-transform duration-300"
+                  src="https://images.unsplash.com/photo-1559816933-0b5b4de2bbcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" />
+                <div class="image-overlay"></div>
+              </div>
             </div>
           </div>
-          <div class="relative group">
-            <img class="w-full h-full object-cover transition duration-300 ease-in-out transform group-hover:scale-105" src="https://images.unsplash.com/photo-1516055000302-a11419b8179f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="" />
-            
-            <div class="overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-             
+          <div class="flex w-1/3 flex-wrap">
+            <div class="w-full p-1 md:p-2">
+              <div class="image-container relative">
+                <img
+                  alt="gallery"
+                  class="block h-full w-full rounded-lg object-cover  image object-center hover:scale-110 transition-transform duration-300"
+                  src="https://images.unsplash.com/photo-1559816933-0b5b4de2bbcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" />
+                <div class="image-overlay"></div>
+              </div>
             </div>
           </div>
-          <div class="relative group">
-          <img  class="w-full h-full object-cover transition duration-300 ease-in-out transform group-hover:scale-105" src="https://images.unsplash.com/photo-1559816933-0b5b4de2bbcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="" />
-            <div class="overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-             
+          <div class="flex w-1/3 flex-wrap">
+            <div class="w-full p-1 md:p-2">
+              <div class="image-container relative">
+                <img
+                  alt="gallery"
+                  class="block h-full w-full rounded-lg object-cover  image object-center hover:scale-110 transition-transform duration-300"
+                  src="https://images.unsplash.com/photo-1559816933-0b5b4de2bbcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" />
+                <div class="image-overlay"></div>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-1/3 flex-wrap">
+            <div class="w-full p-1 md:p-2">
+              <div class="image-container relative">
+                <img
+                  alt="gallery"
+                  class="block h-full w-full rounded-lg object-cover  image object-center hover:scale-110 transition-transform duration-300"
+                  src="https://images.unsplash.com/photo-1559816933-0b5b4de2bbcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" />
+                <div class="image-overlay"></div>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-1/3 flex-wrap">
+            <div class="w-full p-1 md:p-2">
+              <div class="image-container relative">
+                <img
+                  alt="gallery"
+                  class="block h-full w-full rounded-lg object-cover  image object-center hover:scale-110 transition-transform duration-300"
+                  src="https://images.unsplash.com/photo-1559816933-0b5b4de2bbcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" />
+                <div class="image-overlay"></div>
+              </div>
+            </div>
+          </div>
+          <div class="flex w-1/3 flex-wrap">
+            <div class="w-full p-1 md:p-2">
+              <div class="image-container relative">
+                <img
+                  alt="gallery"
+                  class="block h-full w-full rounded-lg object-cover  image object-center hover:scale-110 transition-transform duration-300"
+                  src="https://images.unsplash.com/photo-1559816933-0b5b4de2bbcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" />
+                <div class="image-overlay"></div>
+              </div>
             </div>
           </div>
          
         </div>
       </div>
+      
       
 
     );

@@ -3,45 +3,65 @@ import { Link } from 'react-router-dom';
 
 const Features = () => {
     return (
-        <section class="bg-gray-100 py-16">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold text-center mb-8">Key Features</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          
-            <div class="bg-white shadow-md rounded-lg p-6">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-              </svg>
-              <h3 class="text-lg font-bold mb-2">Fast Delivery</h3>
-              <p class="text-gray-600">Get your orders delivered quickly and efficiently with our fast delivery service.</p>
-            </div>
-      
-            
-            <div class="bg-white shadow-md rounded-lg p-6">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 12H6M18 4H6M18 20H6" />
-              </svg>
-              <h3 class="text-lg font-bold mb-2">Wide Range of Products</h3>
-              <p class="text-gray-600">Explore our extensive collection of products across various categories and find what you need.</p>
-            </div>
-      
-  
-            <div class="bg-white shadow-md rounded-lg p-6">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13l-4 4m0 0l-4-4m4 4V3" />
-              </svg>
-              <h3 class="text-lg font-bold mb-2">Easy Returns</h3>
-              <p class="text-gray-600">Not satisfied with your purchase? Return it hassle-free within 30 days for a refund or exchange.</p>
+      <section class="bg-gray-100 py-8">
+  <div class="container mx-auto">
+    <h2 class="text-3xl text-center mt-5 font-semibold text-gray-800 mb-4">Features Services</h2>
+    <div class="flex flex-wrap -mx-4">
+      <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="relative">
+            <img className='w-full' src="https://www.verywellfamily.com/thmb/pcDMwKCWQHLOisqu38nuC-tUTW4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/top-cleaning-toy-sets-1900904-b4bd90b851564f8da2dcb7fe0ea20412.png" alt="" />
+            {/* <img src="image1.jpg" alt="AI-Powered Virtual Assistants" class="w-full"> */}
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300 ease-in-out bg-gray-900 bg-opacity-50">
+             <Link><button className='btn btn-outline btn-warning '>Book Now</button></Link>
             </div>
           </div>
-      
-          <div class="mt-16 bg-blue-500 py-12 px-6 rounded-lg text-center">
-            <h3 class="text-2xl font-bold text-white mb-4">Limited Time Offer</h3>
-            <p class="text-white">Get 20% off on all products. Use code <span class="font-bold">DISCOUNT20</span> at checkout.</p>
-            <Link to="alltoy"></Link>
+          <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Toy Repair</h3>
+            <p class="text-gray-600">We provide professional toy repair services to ensure your toys stay in top condition.</p>
           </div>
         </div>
-      </section>
+      </div>
+      <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="relative">
+            <img className='w-full' src="https://www.verywellfamily.com/thmb/pcDMwKCWQHLOisqu38nuC-tUTW4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/top-cleaning-toy-sets-1900904-b4bd90b851564f8da2dcb7fe0ea20412.png" alt="" />
+            {/* <img src="image1.jpg" alt="AI-Powered Virtual Assistants" class="w-full"> */}
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300 ease-in-out bg-gray-900 bg-opacity-50">
+             <Link><button className='btn btn-outline btn-warning '>Book Now</button></Link>
+            </div>
+          </div>
+          <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Toy Cleaning</h3>
+            <p class="text-gray-600">Our toy cleaning service will keep your toys clean and germ-free, ready for playtime.</p>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-4">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div class="relative">
+            <img className='w-full' src="https://www.verywellfamily.com/thmb/pcDMwKCWQHLOisqu38nuC-tUTW4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/top-cleaning-toy-sets-1900904-b4bd90b851564f8da2dcb7fe0ea20412.png" alt="" />
+            {/* <img src="image1.jpg" alt="AI-Powered Virtual Assistants" class="w-full"> */}
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300 ease-in-out bg-gray-900 bg-opacity-50">
+             <Link><button className='btn btn-outline btn-warning '>Book Now</button></Link>
+            </div>
+          </div>
+          <div class="p-6">
+          <h3 class="text-xl font-bold mb-2">Customization</h3>
+            <p class="text-gray-600">We offer toy customization services to make your toys unique and personalized.</p>
+          </div>
+        </div>
+      </div>
+      
+      
+     
+    </div>
+  </div>
+</section>
+
+    
+    
+    
       
     );
 };

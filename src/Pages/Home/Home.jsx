@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Banner from './Banner/Banner';
 import Shop from './Shop/Shop';
 import Gallery from '../Gallery/Gallery';
+import Features from '../Features/Features';
 
 const Home = () => {
     
@@ -12,6 +13,7 @@ const Home = () => {
       <Shop></Shop>
       <Banner></Banner>
       <Gallery></Gallery>
+      <Features></Features>
      </div>
     
       

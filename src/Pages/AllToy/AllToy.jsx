@@ -38,9 +38,9 @@ const AllToy = () => {
           <h2 className="text-2xl font-semibold">Showing toys: ({toy.length})</h2>
   
           <div className="dropdown-left dropdown dropdown-hover">
-            <label  className="btn btn-sm btn-secondary"> Filter by price: </label>
+            <label  className="text-xl text-warning"> Filter by price: </label>
             
-              <button onClick={() => handleSort('asc')} className={`btn ${sort === 'asc' ? 'active' : ''}`}>
+              <button  onClick={() => handleSort('asc')} className={`btn mr-3 ${sort === 'asc' ? 'active' : ''}`}>
                 Ascending
               </button>
               <button onClick={() => handleSort('desc')} className={`btn ${sort === 'desc' ? 'active' : ''}`}>
