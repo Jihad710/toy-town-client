@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import Banner from './Banner/Banner';
 import Shop from './Shop/Shop';
+import Gallery from '../Gallery/Gallery';
 
 const Home = () => {
     
@@ -10,6 +11,7 @@ const Home = () => {
      
       <Shop></Shop>
       <Banner></Banner>
+      <Gallery></Gallery>
      </div>
     
       
