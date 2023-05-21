@@ -1,7 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../provider/AuthProvider';
 import Select from "react-select/creatable";
+import Swal from 'sweetalert2';
+import Aos from 'aos';
 
 
 const AddToy = () => {
@@ -26,10 +28,30 @@ const AddToy = () => {
         })
         .then(res=>{ })
         .then(data=>{
+            Swal.fire({
+                position: 'top',
+                icon: 'success',
+                title: 'Added a Lego',
+                showConfirmButton: false,
+                timer: 1500
+            })
             reset()
         })
 
     };
+
+
+    useEffect(() => {
+        Aos.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out',
+        });
+    }, []);
+
+    useEffect(() => {
+        Aos.refresh();
+    });
 
     const options = [
         { value: "Sports car", label: "sports car" },

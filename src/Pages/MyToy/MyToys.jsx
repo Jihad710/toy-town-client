@@ -1,16 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import MyToy from './MyToy';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
 
 const MyToys = () => {
 
-    useLegoTitle('My Toys')
 
     const {user,loading, setLoading } = useContext(AuthContext)
     const [toy, setToy] = useState([])
 
-    const URL = `http://localhost:5000/myToys?email=${user.email}`
+    const URL = `http://localhost:5000/mytoy`
+    
     useEffect(()=>{
         setLoading(true)
         fetch(URL,{
@@ -23,6 +23,7 @@ const MyToys = () => {
         })
         setLoading(false)
     },[URL])
+    console.log(toy)
     
     const handleDeleteMyToy = id =>{
         Swal.fire({

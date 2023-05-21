@@ -1,16 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import TableRow from '../TableRow/TableRow';
+import Aos from 'aos';
 
 const AllToy = () => {
 
     const [toy, setToy] = useState([])
     const [loading , setLoading] = useState(true)
     const [sort, setSort] = useState('all')
+    const [searchText, setSearchText] = useState("")
 
 
      useEffect(()=>{
         fetchToy (sort);
      },[sort])
+     useEffect(() => {
+        Aos.init({
+          duration: 1000,
+          once: true,
+          easing: 'ease-out',
+        });
+        
+      }, []);
 
      const fetchToy = async sort =>{
         try {
