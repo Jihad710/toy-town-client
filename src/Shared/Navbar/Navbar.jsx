@@ -107,7 +107,7 @@ const Navbar = () => {
             alt=""
           /></Link>
           <Link to="/"><h2 className="font-bold md:text-xl">
-            <span className="text-green-500">TOY</span> <span className="text-white">TOWN</span>
+            <span className="text-green-500">TOY</span> <span className="text-rose-600">TOWN</span>
           </h2></Link>
         </div>
         <div className="navbar-center hidden lg:flex">

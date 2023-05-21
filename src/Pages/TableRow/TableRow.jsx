@@ -1,37 +1,48 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const TableRow = () => {
+const TableRow = ({toy}) => {
+    const {_id,sellerName,rating,price,name,message,imgLink,email,category ,availableQuantity,applyDate} = toy
+   
     return (
-        <tbody>
-        {/* row 1 */}
-        <tr>
-            
-            <td>
+        <tbody className=''>
+           
+        <tr >
+
+            <td >
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
-                            <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
+                        <div className="mask mask-squircle w-32">
+                            <img src={imgLink} alt="" />
+                            
                         </div>
                     </div>
                     <div>
-                        <div className="font-bold">Hart Hagerty</div>
-                        <div className="text-sm opacity-50">United States</div>
+                        <div className="font-bold">{name}</div>
+
                     </div>
                 </div>
             </td>
             <td>
-                Zemlak, Daniel and Leannon
-                <br />
-                <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
+                <div>
+                    <div className="font-semibold">{category}</div>
+
+                </div>
             </td>
-            <td>Purple</td>
+            <td>
+               <div className="font-bold">
+                {price}<span className='font-normal'> TK</span>
+               </div>
+            </td>
+            <td className={availableQuantity >= 4 ? 'text-success font-bold' : availableQuantity <= 3 ? 'text-error font-bold' : ''}>
+{availableQuantity}
+</td>
             <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                <Link to={`/alltoy/${_id}`}><button className="btn btn-info btn-xs">details</button></Link>
             </th>
         </tr>
-        
-       
-        
+
+
     </tbody>
     );
 };

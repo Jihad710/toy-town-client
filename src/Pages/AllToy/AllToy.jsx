@@ -3,52 +3,76 @@ import TableRow from '../TableRow/TableRow';
 
 const AllToy = () => {
 
-    const [toys, setToys] = useState([])
+    const [toy, setToy] = useState([])
     const [loading , setLoading] = useState(true)
+    const [sort, setSort] = useState('all')
+
+
      useEffect(()=>{
-        setLoading(true)
-        fetch(`http://localhost:5000/alltoy`,{
-            method:"GET",
-            headers:{
-                "content-type":"application.json"
-            },
-            headers:{
-                body:"",
-            }
-        })
-        .then(res=>res.json())
-        .then(data=>setToys(data))
-        setLoading(false)
-    },[])
-    console.log(toys)
+        fetchToy (sort);
+     },[sort])
+
+     const fetchToy = async sort =>{
+        try {
+            setLoading(true);
+
+  const response = await fetch(`http://localhost:5000/alltoy?sort=${sort}`);
+  const data = await response.json();
+      setToy(data);
+      setLoading(false);
+    } catch (error) {
+      console.error( error);
+    }
+  };
+
+  const handleSort = sortType => {
+    setSort(sortType);
+  };
+            
+        
+    
 
     return (
         <div className="overflow-x-auto w-full">
-        {
-        loading && <div className=""><progress className="progress w-full"></progress></div>
-
-    }
-        <table className="table w-full">
-        
-            <thead>
-                <tr>
-                    
-                    <th>Toy</th>
-                    <th>Price</th>
-                    <th>Available Quantity</th>
-                    <th></th>
-                </tr>
-            </thead>
-
+        <div className="container mx-auto flex justify-between items-center py-2" >
+          <h2 className="text-2xl font-semibold">Showing toys: ({toy.length})</h2>
+  
+          <div className="dropdown-left dropdown dropdown-hover">
+            <label  className="btn btn-sm btn-secondary"> Filter by price: </label>
             
-            {
-                toys.map(toy=><TableRow key={toy._id} toy={toy}></TableRow>)
-            }
-           
+              <button onClick={() => handleSort('asc')} className={`btn ${sort === 'asc' ? 'active' : ''}`}>
+                Ascending
+              </button>
+              <button onClick={() => handleSort('desc')} className={`btn ${sort === 'desc' ? 'active' : ''}`}>
+                Descending
+              </button>
             
-
+          </div>
+          
+        </div>
+        {loading && (
+          <div className="flex justify-center"><progress className="progress w-full container"></progress>
+          </div>
+          )
+        }
+        <table className="table w-full container mx-auto">
+          <thead>
+            <tr>
+              <th>Toy</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Available Quantity</th>
+              <th></th>
+            </tr>
+          </thead>
+  
+          {
+            toy.map(toy => <TableRow key={toy._id} toy={toy} />)
+          }
+  
+  
         </table>
-    </div>
+      </div>
     );
 };
 

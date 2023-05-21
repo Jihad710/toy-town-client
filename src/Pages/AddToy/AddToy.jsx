@@ -3,7 +3,10 @@ import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../provider/AuthProvider';
 import Select from "react-select/creatable";
 
+
 const AddToy = () => {
+    // pageTitle('Add a Toy')
+
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const { user } = useContext(AuthContext);
     const [selectedOption, setSelectedOption] = useState(null);
@@ -12,6 +15,7 @@ const AddToy = () => {
         data.category = selectedOption.value
         data.email = user?.email
         data.sellerName = user?.displayName
+        data.price = parseInt(data.price);
         console.log( data);
         fetch(`http://localhost:5000/addtoy`,{
             method:"POST",
@@ -20,7 +24,7 @@ const AddToy = () => {
             },
             body: JSON.stringify(data)
         })
-        .then(res=>{})
+        .then(res=>{ })
         .then(data=>{
             reset()
         })

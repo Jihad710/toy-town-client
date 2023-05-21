@@ -9,6 +9,9 @@ import Blog from "../Pages/Blog/Blog";
 import AddToy from "../Pages/AddToy/AddToy";
 import AllToy from "../Pages/AllToy/AllToy";
 import MyToy from "../Pages/MyToy/MyToy";
+import PrivetRoute from "./PrivateRoutes";
+import ToyDetails from "../Pages/ToyDetails/ToyDetails";
+import UpdateToys from "../Pages/UpdateToys/UpdateToys";
 
 
 
@@ -37,15 +40,25 @@ const router = createBrowserRouter([
         },
         {
           path:'/addtoy',
-          element:<AddToy></AddToy>
+          element:<PrivetRoute><AddToy></AddToy></PrivetRoute>
         },
         {
           path:'/alltoy',
           element:<AllToy></AllToy>
         },
         {
+          path: "/allToys/:id",
+          element:<PrivetRoute> <ToyDetails></ToyDetails></PrivetRoute>,
+          loader: ({params})=>fetch(`http://localhost:5000/allToys/${params.id}`)
+        },
+        {
+          path: "/updateToys/:id",
+          element:<PrivetRoute><UpdateToys/></PrivetRoute>,
+          loader: ({params})=>fetch(`http://localhost:5000/updateToys/${params.id}`)
+        },
+        {
           path:'/mytoy',
-          element:<MyToy></MyToy>
+          element:<PrivetRoute><MyToy></MyToy></PrivetRoute>
         }
       ]
       
