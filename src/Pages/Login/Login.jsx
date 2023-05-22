@@ -1,46 +1,69 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../provider/AuthProvider";
+import Aos from "aos";
+import usePageTitle from "../../hooks/usePageTitle";
 
 const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-    reset,
-  } = useForm();
+  usePageTitle('Login Page')
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-out',
+    });
+  }, []);
+
+  useEffect(() => {
+    Aos.refresh();
+  });
+
+
+  const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
   const [showPassword, setShowPassword] = useState(false);
 
-  const { user, SignOutUser, loginWithGoogle, CreateUser, login } =
-    useContext(AuthContext);
+  const { user, SignOutUser, loginWithGoogle, CreateUser, login } = useContext(AuthContext)
 
-  const navigate = useNavigate();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
-  console.log(location);
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
+    console.log(location)
+  
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = data => {
+    console.log(data)
     login(data.email, data.password)
-      .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser);
-        navigate(from, { replace: true });
+        .then(result => {
+            const loggedUser = result.user
+            console.log(loggedUser)
+            navigate(from, { replace: true })
+            toast.success(`Login`)
+        })
+        .catch(err => {
+            console.log(err)
+            toast.error(`error`)
+        })
+
+
+};
+   
+const handleGoogleLogin = () => {
+  loginWithGoogle()
+      .then(result => {
+          const loggedUser = result.user
+          console.log(loggedUser)
+          navigate(from, { replace: true })
+          toast.success(`Login`)
+
+
       })
-      .catch((error) => console.log(error));
-  };
-  const handleGoogleLogin = () => {
-    loginWithGoogle()
-      .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser);
-        navigate(from, { replace: true });
-      })
-      .catch((error) => console.log(error));
-  };
+      .catch(err => console.log(err))
+
+}
+
+
 
   return (
     <div>

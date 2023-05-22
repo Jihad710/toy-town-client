@@ -4,10 +4,11 @@ import { AuthContext } from '../../provider/AuthProvider';
 import Select from "react-select/creatable";
 import Swal from 'sweetalert2';
 import Aos from 'aos';
+import usePageTitle from '../../hooks/usePageTitle';
 
 
 const AddToy = () => {
-    // pageTitle('Add a Toy')
+ usePageTitle('Add A Toy')
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const { user } = useContext(AuthContext);
@@ -15,7 +16,7 @@ const AddToy = () => {
 
     const onSubmit = (data) => {
         data.category = selectedOption.value
-        data.email = user?.email
+        data.email = user?.email || data.email;
         data.sellerName = user?.displayName
         data.price = parseInt(data.price);
         console.log( data);
@@ -31,7 +32,7 @@ const AddToy = () => {
             Swal.fire({
                 position: 'top',
                 icon: 'success',
-                title: 'Added a Lego',
+                title: 'Added Product',
                 showConfirmButton: false,
                 timer: 1500
             })
@@ -87,6 +88,20 @@ const AddToy = () => {
                     />
                     {errors.name && <p className="text-red-500">Toy name is required</p>}
                 </div>
+                <div className="">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                        Your Email
+                    </label>
+                    <input
+                    placeholder='Your email'
+                        type="text"
+                        id="email"
+                        {...register('email', { required: true })}
+                        className="mt-1 px-3 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    />
+                    {errors.email && <p className="text-red-500">Your email is required</p>}
+                </div>
+                
                
                 <div className="">
                     <label htmlFor="imgLink" className="block text-sm font-medium text-gray-700">

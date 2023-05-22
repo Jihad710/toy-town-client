@@ -1,8 +1,10 @@
 
 import React from 'react';
 import { FaRegQuestionCircle } from 'react-icons/fa';
+import usePageTitle from '../../hooks/usePageTitle';
 
 const Blog = () => {
+    usePageTitle('Blogs')
     return (
         <div  className='pt-3 pb-5 d-flex flex-column m-6 '>
 <div>

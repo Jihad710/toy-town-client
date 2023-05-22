@@ -4,8 +4,10 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { useForm } from "react-hook-form";
 import { updateProfile } from "firebase/auth";
 import { toast } from "react-hot-toast";
+import usePageTitle from "../../hooks/usePageTitle";
 
 const Register = () => {
+  usePageTitle('Registration Page')
   const { auth, CreateUser } = useContext(AuthContext);
   //for redirect pages
   const navigate = useNavigate();

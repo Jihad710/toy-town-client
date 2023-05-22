@@ -41,26 +41,27 @@ const router = createBrowserRouter([
         },
         {
           path:'/addtoy',
-          element:<PrivetRoute><AddToy></AddToy></PrivetRoute>
+          element:<AddToy></AddToy>
+        },
+        {
+          path:'/mytoy',
+          element:<PrivetRoute><MyToys></MyToys></PrivetRoute>
         },
         {
           path:'/alltoy',
           element:<AllToy></AllToy>
         },
         {
-          path: "/allToys/:id",
+          path: "/alltoy/:id",
           element:<PrivetRoute> <ToyDetails></ToyDetails></PrivetRoute>,
           loader: ({params})=>fetch(`http://localhost:5000/allToys/${params.id}`)
         },
         {
-          path: "/updateToys/:id",
+          path: "/updatetoys/:id",
           element:<PrivetRoute><UpdateToys/></PrivetRoute>,
           loader: ({params})=>fetch(`http://localhost:5000/updateToys/${params.id}`)
-        },
-        {
-          path:'/mytoy',
-          element:<PrivetRoute><MyToys></MyToys></PrivetRoute>
         }
+        
       ]
       
     },

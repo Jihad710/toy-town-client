@@ -2,14 +2,17 @@ import React, { useContext, useEffect, useState } from 'react';
 import MyToy from './MyToy';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import usePageTitle from '../../hooks/usePageTitle';
 
 const MyToys = () => {
+  usePageTitle('My Toys')
 
 
     const {user,loading, setLoading } = useContext(AuthContext)
     const [toy, setToy] = useState([])
 
-    const URL = `http://localhost:5000/mytoy`
+    const URL = `http://localhost:5000/mytoy?email=${user.email}`
+  
     
     useEffect(()=>{
         setLoading(true)
@@ -36,7 +39,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-              fetch(`http://localhost:5000/allToys/${id}`,{
+              fetch(`http://localhost:5000/alltoys/${id}`,{
                 method: "DELETE"
               })
               .then(res=>res.json())
@@ -70,7 +73,7 @@ const MyToys = () => {
             </thead>
 
             {
-                toy.map(toy=><MyToy key={toy._id} toy={toy} handleDelete={handleDeleteMyToy}></MyToy>)
+                toy.map(toy=><MyToy key={toy._id} toy={toy} handleDeleteMyToy={handleDeleteMyToy}></MyToy>)
 
 }   
 
