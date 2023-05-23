@@ -1,6 +1,8 @@
 import React from 'react';
+import usePageTitle from '../../hooks/usePageTitle';
 
 const About = () => {
+    usePageTitle('About Us')
     return (
         <div className="bg-white py-10">
         <div className="container mx-auto px-4">

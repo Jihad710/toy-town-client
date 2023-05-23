@@ -14,6 +14,8 @@ import ToyDetails from "../Pages/ToyDetails/ToyDetails";
 import UpdateToys from "../Pages/UpdateToys/UpdateToys";
 import MyToys from "../Pages/MyToy/MyToys";
 import About from "../Pages/About/About";
+import FutureServices from "../Pages/FutureService/FutureServices";
+import Offer from "../Pages/Offrer/Offer";
 
 
 
@@ -43,6 +45,7 @@ const router = createBrowserRouter([
         {
           path:'/addtoy',
           element:<PrivetRoute><AddToy></AddToy></PrivetRoute>
+
         },
         {
           path:'/mytoy',
@@ -65,7 +68,15 @@ const router = createBrowserRouter([
           path: "/updatetoys/:id",
           element:<PrivetRoute><UpdateToys/></PrivetRoute>,
           loader: ({params})=>fetch(`http://localhost:5000/updateToys/${params.id}`)
-        }
+        },
+        {
+          path:'/services',
+          element:<FutureServices></FutureServices>
+        },
+        {
+          path:'/offer',
+          element:<Offer></Offer>
+        },
         
       ]
       
