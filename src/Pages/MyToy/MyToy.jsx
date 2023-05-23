@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaStar} from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import usePageTitle from '../../hooks/usePageTitle';
+import Aos from 'aos';
 
 const MyToy = ({ toy ,handleDeleteMyToy}) => {
     usePageTitle('My Toy')
     const { _id,  sellerName, rating, price, name, message, imgLink, email, category, availableQuantity, applyDate } = toy
+    useEffect(() => {
+        Aos.init({
+          duration: 1000,
+          once: true,
+          easing: 'ease-out',
+        });
+      }, []);
     
+      useEffect(() => {
+        Aos.refresh();
+      });
      
       return (
         <>
-        
+        <div data-aos='fade-up'>
         <tbody className='overflow-x-scroll mr-5 mx-auto'>
 
             <tr >
@@ -82,6 +93,7 @@ const MyToy = ({ toy ,handleDeleteMyToy}) => {
 
 
         </tbody>
+        </div>
         
         </>
           );

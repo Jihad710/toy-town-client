@@ -68,7 +68,7 @@ const handleGoogleLogin = () => {
   return (
     <div>
     
-      <div className="md:w-1/2 mx-auto">
+      <div data-aos='fade-up' className="md:w-1/2 mx-auto">
         <div className="card  w-full bg-base-100">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="card-body">

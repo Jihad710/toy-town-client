@@ -1,12 +1,24 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaRegQuestionCircle } from 'react-icons/fa';
 import usePageTitle from '../../hooks/usePageTitle';
+import Aos from 'aos';
 
 const Blog = () => {
     usePageTitle('Blogs')
+    useEffect(() => {
+        Aos.init({
+          duration: 1000,
+          once: true,
+          easing: 'ease-out',
+        });
+      }, []);
+    
+      useEffect(() => {
+        Aos.refresh();
+      });
     return (
-        <div  className='pt-3 pb-5 d-flex flex-column m-6 '>
+        <div data-aos='fade-up'  className='pt-3 pb-5 d-flex flex-column m-6 '>
 <div>
                 <div className="">
 

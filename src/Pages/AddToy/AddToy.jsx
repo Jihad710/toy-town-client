@@ -13,6 +13,7 @@ const AddToy = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const { user } = useContext(AuthContext);
     const [selectedOption, setSelectedOption] = useState(null);
+   
 
     const onSubmit = (data) => {
         data.category = selectedOption.value
@@ -72,7 +73,7 @@ const AddToy = () => {
 
 
     return (
-        <div className='my-5'>
+        <div data-aos='fade-up' className='my-5'>
         <form onSubmit={handleSubmit(onSubmit)} className="w-1/2 mx-auto space-y-4">
             <div className="grid md:grid-cols-2 grid-cols-1 gap-3 items-center">
                 <div className="">
