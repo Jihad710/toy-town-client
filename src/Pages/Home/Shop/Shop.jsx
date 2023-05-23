@@ -102,7 +102,7 @@ const Shop = () => {
                       <p className="text-right">Rating: {item.rating}</p>
                     </div>
                     <div className="card-actions justify-center">
-                      <Link to={`/alltoy/${item._id}`} className="btn btn-primary" type="button">
+                      <Link to={`/alltoy/${item._id}`} className="btn btn-outline btn-warning mt-3" type="button">
                         View Details
                       </Link>
                     </div>

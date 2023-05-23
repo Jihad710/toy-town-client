@@ -22,25 +22,17 @@ const Blog = () => {
 <div>
                 <div className="">
 
-                    <h2 className='fs-3 d-flex align-items-center gap-3 my-3'><FaRegQuestionCircle></FaRegQuestionCircle> Tell us the differences between uncontrolled and controlled components.</h2>
-                    <p className='fs-6'>A Controlled Component is one that takes its current value through props and notifies changes through callbacks like onChange. A parent component "controls" it by handling the callback and managing its own state and passing the new values as props to the controlled component. You could also call this a "dumb component".A Uncontrolled Component is one that stores its own state internally, and you query the DOM using a ref to find its current value when you need it. This is a bit more like traditional HTML.
-                        In another way, The difference between them is that components that their value is set/passed and have a callback are called controlled components. like react bootstrap's Image component, And traditional HTML where an input element handle their own value and can be read via refs called uncontrolled components.
+                    <h2 className='fs-3 d-flex align-items-center gap-3 my-3'><FaRegQuestionCircle></FaRegQuestionCircle> What is an access token and refresh token? How do they work and where should we store them on the client-side?</h2>
+                    <p className='fs-6'>An access token is a credential that is issued by an authentication server to a client application after successful authentication. It represents the client's authorization to access specific resources or perform certain actions on behalf of the authenticated user. Access tokens are usually short-lived and have an expiration time associated with them. They are commonly used in API requests to authenticate the client and provide access to protected resources.A refresh token is a long-lived credential that is also issued by the authentication server alongside the access token. The purpose of a refresh token is to obtain a new access token when the current one expires. Unlike access tokens, refresh tokens are typically not transmitted with each API request but are kept securely on the client-side. The client can use the refresh token to request a new access token without requiring the user to re-authenticate.The client authenticates with the server using credentials (e.g., username and password) or other authentication methods.Upon successful authentication, the server generates an access token and a refresh token.The server sends the access token back to the client, which includes it in subsequent API requests as an authorization header or query parameter.
                     </p>
                 </div>
                 <div className="">
-                    <h2 className='fs-3 d-flex align-items-center gap-3 my-3'><FaRegQuestionCircle></FaRegQuestionCircle> How to validate React props using PropTypes?</h2>
-                    <p className='fs-6'>To validate props using PropTypes in a React component, i need to follow these steps:
-                        <ol>
-                            <li>
-                                Install the prop-types package by running the following command in terminal: npm install prop-types. This package is used to define the types of the props that component expects.
-                            </li>
-                            <li>
-                                Now, validate proptypes by  PropTypes.(PropTypes name).isRequired, PropTypes can be bool, func, array, object, symbol.
-                            </li>
-                            <li>If a prop with an incorrect type is passed to component, a warning will be shown in the console. </li>
-                        </ol>
+
+                    <h2 className='fs-3 d-flex align-items-center gap-3 my-3'><FaRegQuestionCircle></FaRegQuestionCircle> Compare SQL and NoSQL databases?</h2>
+                    <p className='fs-6'>SQL databases are vertically scalable, while NoSQL databases are horizontally scalable. SQL databases are table-based, while NoSQL databases are document, key-value, graph, or wide-column stores. SQL databases are better for multi-row transactions, while NoSQL is better for unstructured data like documents or JSON.
                     </p>
                 </div>
+                
                 <div className="">
                     <h2 className='fs-3 d-flex align-items-center gap-3 my-3'><FaRegQuestionCircle></FaRegQuestionCircle> Tell us the difference between nodejs and express js.</h2>
                     <p className='fs-6'>Node.js is a JavaScript runtime that allows developers to run JavaScript on the server-side. It provides a platform for building server-side applications using JavaScript.
@@ -48,9 +40,12 @@ const Blog = () => {
                         In short, Node.js is a JavaScript runtime, while Express.js is a framework built on top of Node.js for building web applications and APIs.</p>
                 </div>
                 <div className="">
-                    <h2 className='fs-3 d-flex align-items-center gap-3 my-3' ><FaRegQuestionCircle></FaRegQuestionCircle> What is a custom hook, and why will you create a custom hook?</h2>
-                    <p className='fs-6'>In React, a custom hook is a function that allows you to reuse logic across multiple components. Custom hooks enable you to extract common functionality from components and share it among them.
-                        Custom hooks are created by using the use prefix before the name of the hook function. By convention, custom hooks are usually defined in separate files from the components that use them.</p>
+                    <h2 className='fs-3 d-flex align-items-center gap-3 my-3' ><FaRegQuestionCircle></FaRegQuestionCircle> What is express js? What is Nest JS?</h2>
+                    <p className='fs-6'>NestJS has a more structured and organized documentation, while Express's documentation is more flexible and open-ended. In conclusion, NestJS and Express are both powerful and popular frameworks that can be used to build a wide range of web applications and APIs</p>
+                </div>
+                <div className="">
+                    <h2 className='fs-3 d-flex align-items-center gap-3 my-3' ><FaRegQuestionCircle></FaRegQuestionCircle> What is MongoDB aggregate and how does it work? </h2>
+                    <p className='fs-6'>Aggregation is a way of processing a large number of documents in a collection by means of passing them through different stages. The stages make up what is known as a pipeline. The stages in a pipeline can filter, sort, group, reshape and modify documents that pass through the pipeline.</p>
                 </div>
 
 </div>

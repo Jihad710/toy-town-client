@@ -31,7 +31,6 @@ const MyToys = () => {
     const handleDeleteMyToy = id =>{
         Swal.fire({
             title: 'Are you sure?',
-            text: "You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -48,7 +47,7 @@ const MyToys = () => {
                 if(data.deletedCount>0){
                     Swal.fire(
                         'Deleted!',
-                        'Your file has been deleted.',
+                        'Your product has been deleted.',
                         'success'
                       )
                     const remainingToys = toy.filter(toy=> toy._id !== id)
