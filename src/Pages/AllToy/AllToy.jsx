@@ -51,7 +51,7 @@ usePageTitle('All Toys')
         setSort(sortType);
       };
       const handleSearch = () => {
-        fetch(`https://localhost:5000/getToysByText/${searchText}`)
+        fetch(`http://localhost:5000/getSearchByText/${searchText}`)
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
