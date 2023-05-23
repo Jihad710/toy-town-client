@@ -13,6 +13,7 @@ import PrivetRoute from "./PrivateRoutes";
 import ToyDetails from "../Pages/ToyDetails/ToyDetails";
 import UpdateToys from "../Pages/UpdateToys/UpdateToys";
 import MyToys from "../Pages/MyToy/MyToys";
+import About from "../Pages/About/About";
 
 
 
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         {
           path:'/alltoy',
           element:<AllToy></AllToy>
+        },
+        {
+          path:'/about',
+          element:<About></About>
         },
         {
           path: "/alltoy/:id",
